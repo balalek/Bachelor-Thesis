@@ -1,0 +1,5 @@
+2023-03-26 11:29:07.514 [main] INFO  ktor.application - Autoreload is disabled because the development mode is off.
+2023-03-26 11:29:07.762 [main] INFO  org.ktorm.database - Connected to jdbc:mysql://127.0.0.1:3306/bookshare, productName: MySQL, productVersion: 5.5.5-10.4.27-MariaDB, logger: org.ktorm.logging.Slf4jLoggerAdapter@493dfb8e, dialect: org.ktorm.database.SqlDialectKt$detectDialectImplementation$1@5d25e6bb
+2023-03-26 11:29:07.800 [main] INFO  org.ktorm.database - Connected to jdbc:mysql://127.0.0.1:3306/bookshare, productName: MySQL, productVersion: 5.5.5-10.4.27-MariaDB, logger: org.ktorm.logging.Slf4jLoggerAdapter@410954b, dialect: org.ktorm.database.SqlDialectKt$detectDialectImplementation$1@7fb9f71f
+2023-03-26 11:29:07.832 [main] INFO  ktor.application - Application auto-reloaded in 0.309 seconds.
+2023-03-26 11:29:08.098 [DefaultDispatcher-worker-1] INFO  ktor.application - Responding at http://192.168.0.103:8080
