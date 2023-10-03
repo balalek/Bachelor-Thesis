@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    android:label="Odstranění účtu"
+    app:startDestination="@id/nav_to_home">
+
+    <fragment
+        android:id="@+id/nav_to_home"
+        android:name="com.example.booksharingapp.ui.home.main.HomeFragment"
+        android:label="BookSharing"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_to_home_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment">
+            <argument
+                android:name="bookId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_nav_to_home_to_filterFragment"
+            app:destination="@id/filterFragment">
+            <argument
+                android:name="price"
+                app:argType="integer" />
+            <argument
+                android:name="author"
+                app:argType="string" />
+            <argument
+                android:name="genres"
+                app:argType="string" />
+            <argument
+                android:name="options"
+                app:argType="string" />
+            <argument
+                android:name="availability"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_change_password"
+        android:name="com.example.booksharingapp.ui.home.changePassword.ChangePasswordFragment"
+        android:label="Změna hesla"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.example.booksharingapp.ui.home.notifications.NotificationsFragment"
+        android:label="Oznámení"
+        tools:layout="@layout/fragment_notifications" >
+        <deepLink
+            android:id="@+id/deepLinkNotification"
+            app:uri="BookSharing://notification" />
+        <action
+            android:id="@+id/action_nav_notifications_to_nav_profile"
+            app:destination="@id/nav_profile">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_nav_notifications_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment" >
+            <argument
+                android:name="bookId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <action
+        android:id="@+id/toNotifications"
+        app:destination="@id/nav_notifications" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.booksharingapp.ui.home.profile.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_nav_profile_self"
+            app:destination="@id/nav_profile">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_nav_profile_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment">
+            <argument
+                android:name="bookId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_nav_profile_to_nav_add_book"
+            app:destination="@id/nav_add_book">
+            <argument
+                android:name="bookId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <action
+        android:id="@+id/toProfile"
+        app:destination="@id/nav_profile" />
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.example.booksharingapp.ui.home.bookDetails.BookDetailsFragment"
+        android:label="Informace o knize"
+        tools:layout="@layout/fragment_book_details">
+        <action
+            android:id="@+id/action_bookDetailsFragment_to_nav_to_home"
+            app:destination="@id/nav_to_home"
+            app:popUpTo="@id/nav_to_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_bookDetailsFragment_to_nav_profile"
+            app:destination="@id/nav_profile">
+            <argument
+                android:name="userId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.booksharingapp.ui.home.filter.FilterFragment"
+        android:label="Filtr"
+        tools:layout="@layout/fragment_filter">
+        <action
+            android:id="@+id/action_filterFragment_to_nav_to_home"
+            app:destination="@id/nav_to_home"
+            app:popUpTo="@id/nav_to_home"
+            app:popUpToInclusive="true">
+            <argument
+                android:name="price"
+                app:argType="integer" />
+            <argument
+                android:name="author"
+                app:argType="string" />
+            <argument
+                android:name="genres"
+                app:argType="string" />
+            <argument
+                android:name="options"
+                app:argType="string" />
+            <argument
+                android:name="availability"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_book"
+        android:name="com.example.booksharingapp.ui.home.addOrEditBook.AddOrEditBookFragment"
+        android:label="Přidat knihu"
+        tools:layout="@layout/fragment_add_book" />
+    <action
+        android:id="@+id/toAddBook"
+        app:destination="@id/nav_add_book" />
+    <fragment
+        android:id="@+id/nav_delete_account"
+        android:name="com.example.booksharingapp.ui.home.deleteAccount.DeleteAccountFragment"
+        android:label="Odstranění účtu"
+        tools:layout="@layout/fragment_delete_account" />
+</navigation>

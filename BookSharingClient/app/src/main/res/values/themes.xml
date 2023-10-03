@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Unauthorized User theme -->
+    <style name="Theme.BookSharingApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/darkModeOrange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/darkModeOrange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorBackground</item>
+        <!-- Customize your theme here. -->
+        <item name="colorButton">@color/orange</item>
+        <item name="colorBackground">@color/darkGrey</item>
+    </style>
+
+    <!-- Authorized User theme -->
+    <style name="Theme.Home" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/darkModeOrange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/darkModeOrange</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/orange</item>
+        <!-- Customize your theme here. -->
+        <item name="colorButton">@color/orange</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="colorCard">@color/lowGrey</item>
+        <item name="menuColor">@color/white</item>
+    </style>
+    
+    <style name="ButtonOrange">
+        <item name="android:background">@drawable/my_button_background</item>
+        <item name="android:textColor">@color/bigBrown</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDefault">
+
+    </style>
+</resources>

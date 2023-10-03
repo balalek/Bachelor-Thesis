@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorBackground"
+            tools:context=".ui.home.profile.ContactsFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/myContactsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/my_profile_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/empty_profile"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add_my_photo_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="16dp"
+                    android:contentDescription="@string/btn_add_book"
+                    android:src="@drawable/ic_baseline_add_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/my_profile_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_profile_image" />
+
+                <EditText
+                    android:id="@+id/my_username_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/username_placeholder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/add_my_photo_button" />
+
+                <ImageView
+                    android:id="@+id/userNamePencilImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/my_username_add"
+                    app:layout_constraintStart_toEndOf="@+id/my_username_add"
+                    app:layout_constraintTop_toTopOf="@+id/my_username_add" />
+
+                <RatingBar
+                    android:id="@+id/review_rating_bar"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:progressTint="@color/orange"
+                    android:scaleX=".8"
+                    android:scaleY=".8"
+                    android:stepSize="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_username_add" />
+
+                <TextView
+                    android:id="@+id/my_second_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:text="@string/hint_email_reg"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/review_rating_bar" />
+
+                <EditText
+                    android:id="@+id/my_second_email_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_edit_24"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_second_email" />
+
+                <TextView
+                    android:id="@+id/my_handover_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start"
+                    android:text="@string/my_handover_place"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_second_email_add" />
+
+                <EditText
+                    android:id="@+id/my_handover_place_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_edit_24"
+                    android:inputType="textPostalAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_handover_place" />
+
+                <TextView
+                    android:id="@+id/my_postal_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start"
+                    android:text="@string/my_psc"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_handover_place_add" />
+
+                <EditText
+                    android:id="@+id/my_postal_code_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_edit_24"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_postal_code" />
+
+                <TextView
+                    android:id="@+id/my_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="start"
+                    android:text="@string/hint_phone_reg"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_postal_code_add" />
+
+                <EditText
+                    android:id="@+id/my_phone_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawableEnd="@drawable/ic_baseline_edit_24"
+                    android:inputType="phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_phone" />
+
+                <TextView
+                    android:id="@+id/alert_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/my_contacts_hint"
+                    android:textColor="@color/normalRed"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_phone_add" />
+
+                <Button
+                    android:id="@+id/store_contacts_btn"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/store_contacts"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/alert_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/otherUserContactsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_profile_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/empty_profile"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/user_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/username_placeholder"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_profile_image" />
+
+                <RatingBar
+                    android:id="@+id/user_review_rating_bar"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:progressTint="@color/orange"
+                    android:scaleX=".8"
+                    android:scaleY=".8"
+                    android:stepSize="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_username" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="4dp"
+                    android:background="?attr/colorOnSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.842"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_review_rating_bar" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/visibleContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:stretchColumns="1"
+                        android:shrinkColumns="1">
+
+                        <TableRow>
+
+                            <TextView
+                                android:padding="8dp"
+                                android:text="@string/e_mail"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/user_email_add"
+                                android:padding="8dp"
+                                android:text="@string/booksharing_seznam_cz"
+                                android:textSize="16sp"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/phoneNumberVisibility"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:text="@string/phone_text"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/user_phone_add"
+                                android:padding="8dp"
+                                android:text="@string/phone_number_example"
+                                android:textSize="16sp"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/placeHandoverVisibility"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:text="@string/handover_place_text"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/user_handover_place_add"
+                                android:padding="8dp"
+                                android:layout_width="wrap_content"
+                                android:text="@string/handover_place_example"
+                                android:textSize="16sp"/>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/postalCodeVisibility"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:padding="8dp"
+                                android:text="@string/psc_text"
+                                android:textSize="16sp"/>
+
+                            <TextView
+                                android:id="@+id/user_psc_add"
+                                android:padding="8dp"
+                                android:text="@string/psc_example"
+                                android:textSize="16sp"/>
+                        </TableRow>
+
+                    </TableLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/invisibleContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view3">
+
+                    <TextView
+                        android:id="@+id/textForUnprivilegedUsers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/hint_for_contacts"
+                        android:textSize="18sp"
+                        android:textAlignment="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/invisibleContacts" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reviews_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:background="?attr/colorCard"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/evaluator_profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/empty_profile"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FF000000"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameOfEvaluator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/placeholder_name_of_evaluator"
+                    android:textSize="16sp"
+                    android:paddingStart="15dp"/>
+
+                <RatingBar
+                    android:id="@+id/review_rating_bar"
+                    style="?android:attr/ratingBarStyleIndicator"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:scaleX=".8"
+                    android:scaleY=".8"
+                    android:stepSize="0.5"
+                    android:progressTint="@color/orange"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/dateOfReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:maxLines="2"
+                android:text="@string/example_date"
+                android:textSize="15sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/content_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/review_content"
+                android:layout_width="0dp"
+                android:paddingTop="4dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/lorem_ipsum_shorter"
+                android:textSize="16sp"
+                android:paddingLeft="7dp"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

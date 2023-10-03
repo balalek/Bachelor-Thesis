@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notification_book_available_cards_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:hardwareAccelerated="true"
+        android:background="?attr/colorCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/notification_book_available_profile_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/empty_profile"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toTopOf="@id/view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/notification_book_available_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginStart="6dp"
+                android:text="@string/book_is_available_text"
+                android:textSize="17sp"
+                app:layout_constraintStart_toEndOf="@+id/notification_book_available_profile_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/arrival_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/example_date"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toTopOf="@id/view2"
+                app:layout_constraintStart_toEndOf="@+id/notification_book_available_profile_image"
+                app:layout_constraintTop_toBottomOf="@+id/notification_book_available_text" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/colorOnSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
